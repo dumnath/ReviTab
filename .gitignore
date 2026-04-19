@@ -11,6 +11,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+.vscode/
 anciennes_versions/
 matieres/
 revitables_2.0.py
