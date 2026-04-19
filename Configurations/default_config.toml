@@ -1,0 +1,238 @@
+
+[fenetre]
+
+style = "default" 
+langue_par_defaut = "english"
+
+[langue]
+
+[langue.francais]
+
+file = "Fichier"
+edit = "Editer"
+settings = "Paramètres"
+help = "Aide"
+
+open = 'Ouvrir...'
+open_description = "Ouvrir un fichier CSV"
+
+new = "Nouveau"
+new_description = "Créer un nouveau fichier CSV"
+
+save = "Sauvegarder"
+save_description = "Sauvegarder le fichier actuel"
+
+exit = "Quitter"
+
+undo = "Annuler"
+
+redo = "Rétablir"
+
+settings_description = "Modifier les paramètres"
+
+reset = "Réinitialiser les paramètres"
+reset_description = "Réinitisaliser les paramètres par défaut"
+
+user_guide = "Guide utilisateur"
+user_guide_description = "Visionner le README"
+
+about = "A propos"
+about_description = "Licences & statut de l'application"
+
+practice = "Entraînement"
+practice_description = "Créer un exercice à partir du fichier actuel"
+
+reload = "Recharger"
+reload_description = "Créer un nouvel exercice à partir du même fichier"
+
+check = "Vérifier"
+check_description = "Vérifier les réponses"
+
+add_row = "Ajouter une ligne"
+add_row_description = "Ajouter une nouvelle ligne"
+
+add_column = "Ajouter une colonne"
+add_column_description = "Ajouter une nouvelle colonne"
+
+delete_row = "Supprimer une ligne"
+delete_row_description = "Supprimer la ligne sélectionnée"
+
+delete_column = "Supprimer une colonne"
+delete_column_description = "Supprimer la colonne sélectionnée"
+
+rename_column = "Renommer la colonne"
+rename_column_description = "Change l'en-tête de la colonne sélectionnée"
+
+header = "En-tête :"
+new_header = "Nouvel en-tête : "
+row = "ligne"
+column = "colonne"
+
+delete_confirmation = "Êtes vous sûr de vouloir supprimer la "
+
+welcome_toolbar = "Barre d'outils d'accueil"
+edit_toolbar = "Barre d'outils d'édition de fichier"
+practice_toolbar = "Barre d'outils d'entraînement"
+
+welcome_page_title = "Accueil"
+exercise_page_title = "Exercice"
+
+select_file = "Sélectionnez un fichier CSV"
+save_file = "Sauvegardez le fichier CSV"
+
+confirm_title = "Confirmation"
+confirm_exit_text = "Abandonner les modifications ?"
+
+ask_saving_file = "Avant de créer un exercice, vous devez sauvegarder le fichier CSV"
+
+score = "Score"
+score_text = "Votre score est de "
+new_exercise = "Nouvel exercice"
+
+application = "Application"
+default_language = "Langue par défaut : "
+app_style = "Style de l'application : "
+
+case_tolerance = "Tolérance à la casse : "
+space_tolerance = "Tolérance aux espaces : "
+display_images = "Apparition d'images : "
+column_shown = "Colonne remplie : "
+
+csv_file_settings = "Paramètres des fichiers CSV"
+separator = "Separateur : "
+
+ok = "OK"
+apply = "Appliquer"
+cancel = "Annuler"
+
+error = "Erreur"
+file_not_found = "Fichier introuvable"
+
+nb_of_questions = "Nombre de questions : "
+from_line = "Questions de la ligne "
+to_line = "A la ligne "
+
+[langue.english]
+
+file = "File"
+edit = "Edit"
+settings = "Settings"
+help = "Help"
+
+open = 'Open...'
+open_description = "Open a CSV file"
+
+new = "New"
+new_description = "Create a new CSV file"
+
+save = "Save"
+save_description = "Save the current file"
+
+exit = "Exit"
+
+undo = "Undo"
+
+redo = "Redo"
+
+settings_description = "Change settings"
+
+reset = "Reset to defaults"
+reset_description = "Reset the settings to the defaults settings"
+
+user_guide = "User Guide"
+user_guide_description = "Show the README"
+
+about = "About"
+about_description = "License & Application Status"
+
+practice = "Practice"
+practice_description = "Create an exercise from the current file"
+
+reload = "Reload"
+reload_description = "Create a new table using the same CSV file"
+
+check = "Check"
+check_description = "Check the answers"
+
+add_row = "Add row"
+add_row_description = "Add a new row"
+
+add_column = "Add column"
+add_column_description = "Add a new column"
+
+delete_row = "Delete row"
+delete_row_description = "Delete the selected row"
+
+delete_column = "Delete column"
+delete_column_description = "Delete the selected column"
+
+rename_column = "Rename column"
+rename_column_description = "Change the header of the current column"
+
+header = "Header :"
+new_header = "New header : "
+row = "row"
+column = "column"
+
+delete_confirmation = "Are you sure you want to delete"
+
+welcome_toolbar = "Welcome Toolbar"
+edit_toolbar = "File Editing Toolbar"
+practice_toolbar = "Practice Toolbar"
+
+welcome_page_title = "Welcome"
+exercise_page_title = "Exercise"
+
+select_file = "Select a CSV file"
+save_file = "Save CSV file"
+
+confirm_title = "Confirmation"
+confirm_exit_text = "Discard changes ?"
+
+ask_saving_file = "Before creating an exercise, you must save your CSV file"
+
+score = "Score"
+score_text = "Your score is"
+new_exercise = "New exercise"
+
+application = "Application"
+default_language = "Default language : "
+app_style = "App style : "
+
+case_tolerance = "Case tolerance : "
+space_tolerance = "Spacee tolerance : "
+display_images = "Display of images : "
+column_shown = "Column shown : "
+
+csv_file_settings = "CSV File settings"
+separator = "Separator : "
+
+ok = "OK"
+apply = "Apply"
+cancel = "Cancel"
+
+error = "Error"
+file_not_found = "File not found"
+
+nb_of_questions = "Number of questions : "
+from_line = "Questions from line "
+to_line = "To line "
+
+[fichiers]
+
+separateur = ";" # Séparateur utilisé par la liste au format CSV
+
+[exercice]
+
+tolerance_casse = true
+tolerance_espaces = true
+column_shown = "random"
+
+[frame_fin_exercice_gif]
+
+gif_fin_exercice = true # Faire apparaître une image à la fin d'un exercice
+
+gifs_excellent = ['Gifs/futurama-technically-correct.gif', 'Gifs/good-job.gif']
+gifs_good = ['Gifs/homer-smart.gif', 'Gifs/happy-homer.gif']
+gifs_quite_bad = ['Gifs/monkey-brain-homer.gif', 'Gifs/angry-dome.gif']
+gifs_very_bad = ['Gifs/why-must-life-be-so-hard.gif', 'Gifs/good-news-everyone']
