@@ -563,17 +563,20 @@ class MainWindow(QMainWindow) :
 
     def open_user_guide(self) :
         title = self.texts['user_guide']
-        self.show_help_doc(find_path('User Guide/README.html'), title)
+        self.show_help_doc(find_path('README.md'), title, True)
     
     def open_about(self) :
         title = self.texts['about']
-        self.show_help_doc(find_path('User Guide/Licenses.html'), title)
+        self.show_help_doc(find_path('LICENSE'), title)
 
-    def show_help_doc(self, filepath, title) :
+    def show_help_doc(self, filepath, title, html=None) :
         with open(filepath, encoding='utf-8') as about :
             contenu = about.read()
         text_edit = QTextEdit()
-        text_edit.setHtml(contenu)
+        if html :
+            text_edit.setHtml(contenu)
+        else :
+            text_edit.setText(contenu)
         text_edit.setFont(QFont('Helvetica', 12))
         text_edit.setReadOnly(True)
         text_edit.document().setModified(False)
