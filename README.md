@@ -28,7 +28,7 @@
 
 <h2 id="Introduction">Introduction</h2>
 
-<p>ReviTab est une application possédant deux versions, une sur Linux et une autre sur Windows, permettant d'éditer des fichiers au 
+<p>ReviTab est une application possédant une versioni avec installeur Windows, permettant d'éditer des fichiers au 
     format CSV et de s'entraîner dessus.</p>
 
 <h2 id="Guide-dutilisation" >Guide d'utilisation</h2>
