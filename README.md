@@ -1,26 +1,26 @@
 <html>
 <body>
 
-<h1>Documentation de ReviTab</h1>
+<h1>ReviTab Documentation</h1>
 
-<h2>Sommaire</h2>
+<h2>Table of contents</h2>
 
 <ul>
     <li><a href="#Introduction">Introduction</a></li>
-    <li><a href="#Guide-dutilisation">Guide d'utilisation</a>
+    <li><a href="#Guide-dutilisation">User guide</a>
         <ul>
-            <li><a href="#Installation-de-lapplication">1. Installation de l'application</a></li>
-            <li><a href="#Fonctionnalités-de-lapplication">2. Fonctionnalités de l'application</a>
+            <li><a href="#Installation-de-lapplication">1. Installing the app</a></li>
+            <li><a href="#Fonctionnalités-de-lapplication">2. App Features</a>
                 <ul>
-                    <li><a href="#Interface-generale">2.1 Interface générale</a></li>
-                    <li><a href="#Edition-de-fichier-CSV">2.2 Edition de fichier CSV</a></li>
-                    <li><a href="#Creation-dexercices">2.3 Création d'exercices</a></li>
-                    <li><a href="#Mode-exercice">2.4 Mode exercice</a></li>
-                    <li><a href="#Parametres">2.5 Paramétrer l'application</a></li>
-                    <li><a href="#Licences-et-user-guide">2.6 Licences et Guide d'utilisation</a></li>
+                    <li><a href="#Interface-generale">2.1 General Interface</a></li>
+                    <li><a href="#Edition-de-fichier-CSV">2.2 Editing CSV files</a></li>
+                    <li><a href="#Creation-dexercices">2.3 Create exercise</a></li>
+                    <li><a href="#Mode-exercice">2.4 Exercise mode</a></li>
+                    <li><a href="#Parametres">2.5 Configure the application</a></li>
+                    <li><a href="#Licences-et-user-guide">2.6 Licenses and User Guide</a></li>
                 </ul>
             </li>
-            <li><a href="#Liste-raccourci">Annexe : Liste des raccourcis</a></li>
+            <li><a href="#Liste-raccourcis">Appendix: List of Shortcuts</a></li>
         </ul>
     </li>
 </ul>
@@ -28,116 +28,115 @@
 
 <h2 id="Introduction">Introduction</h2>
 
-<p>ReviTab est une application possédant deux versions, une sur Linux et une autre sur Windows, permettant d'éditer des fichiers au 
-    format CSV et de s'entraîner dessus.</p>
+<p>ReviTab is a Windows application, that allows you to create and edit CSV files, and practice with their content.</p>
 
-<h2 id="Guide-dutilisation" >Guide d'utilisation</h2>
+<h2 id="Guide-dutilisation">User guide</h2>
 
-<h3 id="Installation-de-lapplication">1. Installation de l'application</h3>
+<h3 id="Installation-de-lapplication">1. Installing the app</h3>
 
-<p>ReviTab est une application compilée à l'aide de PyInstaller en onefile : 
-    c'est-à-dire que l'application ne contient qu'un seul fichier.
-    Elle ne nécessite aucune autre installation. L'application peut être stockée à n'importe quel endroit sur l'ordinateur.
+<p>ReviTab is an application compiled in one-file mode using PyInstaller : 
+    that is, the application consists of a single document.
+    It requires no additional installation. The application can be stored anywhere on the computer.
 </p>
-<p>Lors de la première utilisation, un dossier <code>.revitab</code> sera créé. 
-    Celui ci contient le fichier de configuration de l'application appelé <code>config.toml</code>. Il contient également les fichiers de langue 
-    (par défaut : <code>english.toml</code> et <code>francais.toml</code>). Vous pouvez rajouter vos propres fichiers de langue, 
-    tout en faisant attention aux noms des clés des éléments du fichier (CONSEIL : Copier un des fichiers par défaut et changer le texte).
-    Si le dossier est supprimé, déplacé ou renommé, il sera automatiquement récréé avec les paramètres par défaut de l'application.</p>
+<p>The first time you use the program, a folder named <code>.revitab</code> will be created. 
+    This directory contains the application's configuration file named <code>config.toml</code>. It also contains the language file.
+    (defult : <code>english.toml</code> and <code>francais.toml</code>). You can add your own language files, 
+    but be careful to the names of the file elements' keys (TIP : Copy one of the default files and change the text).
+    If th folder is deleted, removed or renamed, it will be automatically recreated with the app's default settings.</p>
 
-<h3 id="Fonctionnalités-de-lapplication">2. Fonctionnalités de l'application</h3>
+<h3 id="Fonctionnalités-de-lapplication">2. App Features</h3>
 
-<h4 id="Interface-generale">2.1 Interface générale</h4>
+<h4 id="Interface-generale">2.1 General Interface</h4>
 
-<p>ReviTab fonctionne selon un système d'onglets. Vous pouvez donc ouvrir plusieurs fichiers en même temps, ainsi que créer plusieurs exercices.
-    En fonction du type d'onglet ouvert (Accueil, Documentation, Exercice, Edition), la barre d'outils change. 
-    Vous n'avez donc pas accès aux mêmes fonctionnalités en fonction de l'onglet ouvert.
+<p>ReviTab uses a tabbed interface. This means that you can open multiple files at the same time andd create multiple exercises.
+   The toolbar changes dependig on which tab is open (Home, Documentation, Exercise, Edit). 
+   Therefore, the features available to you vary, depending on which tab is open.
 </p>
 
-<h4 id="Edition-de-fichier-CSV">2.2 Edition de fichier CSV</h4>
+<h4 id="Edition-de-fichier-CSV">2.2 Editing CSV files</h4>
 
-<p>Pour ouvrir un fichier CSV, allez dans le menu <code>Fichier</code>, et sélectionnez le menu <code>Ouvrir...</code> (raccourci : <code>Ctrl+O</code>). 
-    Une fenêtre s'ouvrira, vous permettant de choisir un fichier à ouvrir. 
-    Vous ne pouvez ouvrir que des fichiers CSV.</p>
-<p>Vous pouvez également créer un nouveau fichier, 
-    en sélectionnant l'option <code>Nouveau</code> du menu <code>Fichier</code> (raccourci : <code>Ctrl+N</code>).</p>
-<p>Le fichier CSV choisi est affiché sous forme d'un tableau. 
-    Vous pouvez ajouter/retirer des lignes et des colonnes, ainsi que changer les en-têtes des colonnes.</p>
-<p>Pour sauvegarder le fichier, appuyer sur l'icône de sauvegarde de la boîte d'outils ou allez dans <code>Fichier</code>, <code>Sauvegarder</code> (raccourci <code>Ctrl+S</code>). 
-    S'il s'agit d'un nouveau fichier, une fenêtre demandant de choisir la localisation du CSV apparaîtra. 
-    Si le fichier a été modifié et non sauvegardé, une confirmation sera demandée avant la fermeture de l'onglet ou de l'application.</p>
-<p>Pour insérer un ß, utiliser le raccourci <code>Ctrl+Shift+S</code>.</p>
-<p>Vous pouvez également créer des exercices à partir des fichiers ouverts (voir section suivante).</p>
+<p>To open a CSV file, go to the <code>File</code> menu, and select <code>Open...</code> (shortcut : <code>Ctrl+O</code>). 
+    A window will open, allowing you to select a file to open. 
+    You can only open CSV files.</p>
+<p>You can also create new file,  
+    by selecting the <code>New</code> option from the <code>File</code> menu (shotcut : <code>Ctrl+N</code>).</p>
+<p>The selected file is displayed as a table. 
+    You can add or remove rows and columns as well as change the column headers.</p>
+<p>To save the file, click the save icon in the toolbar or go to <code>File</code>, <code>Save</code> (shortcut <code>Ctrl+S</code>). 
+    If this is a new file, a window will appear asking you to select a location for the CSV file. 
+    If the file has been modified but not saved, you will be asked to confirm before closing the tab or the application.</p>
+<p>To insert an ß, use the shortcut <code>Ctrl+Shift+S</code>.</p>
+<p>You can also create exercises from open files (see next section)</p>
 
-<h4 id="Creation-dexercices">2.3 Création d'exercices</h4>
+<h4 id="Creation-dexercices">2.3 Create exercise</h4>
 
-<p>ReviTab permet de générer des exercices à partir de fichiers CSV.
-    Pour pouvoir créer un exercice, vous devez d'abord ouvrir le fichier sur lequel vous souhaitez vous entraîner, 
-    puis, vous appuyez sur le bouton <code>Entraînement</code> (raccourci <code>Ctrl+T</code>). 
-    Pour pouvoir correctement créer l'exercice, assurez vous que le fichier CSV est bien enregistré.</p>
+<p>ReviTab allows you to generate exercises from CSV files.
+    To create an exercise, you must first open the file you want to practice with,
+    then, click the <code>Practice</code> button (shortcut : <code>Ctrl+T</code>). 
+    To ensure that the exerciseis created correctly, make sure the CSV file is saved properly.</p>
 
-<p>Lorsque vous créez l'exercice, vous pouvez choisir le nombre de questions de l'exercice ainsi que les lignes du CSV qui seront utilisées lors de sa création.</p>
+<p>When you create an exercise, you can choose the number of questions it will contain, as well as which rows of the CSV will be used when creating it.</p>
 
-<p>L'exercice généré prend la forme d'un tableau, dont seule une case par ligne est donnée. 
-    Le but de l'exercice est donc de retrouver les autres éléments de la ligne. Vous pouvez choisir la colonne montrée (la première, la dernière ou une aléatoire).</p>
+<p>The exercise is presented as a table, with only one cell per row shown. 
+    The goal of the exercise is therefore to fill in the remaining cells in each row. You can choose which column to display (the first, the last, or a random one).</p>
 
 <h4 id = "Mode-exercice">2.4 Mode exercice</h4>
-<p>Le but d'un exercice est de remplir toutes les cases vides du tableau, en s'aidant de la case montrée.</p>
-<p>Lorsque vous faîtes un exercice, la boîte à outils propose deux options : <code>Vérifier</code> et <code>Recharger</code>.
+<p>The goal of this exercise is to fill in all the empty cells in the table, using the shown cell as a guide.</p>
+<p>When you complete an exercise, the toolbar offers two options : <code>Check</code> and <code>Reload</code>.
     <ul>
-        <li>La première option permet de vérifier les réponses rentrées dans le tableau. 
-        Le score est alors calculé de la manière suivante : 1pt pour chaque cellule correcte, 
-        sur le total de réponses attendues.</li>
-        <li>La deuxième option permet de recréer un nouvel exercice à partir du même fichier (raccourci <code>Ctrl+R</code>).
-        Quand vous rechargez un exercice, vous pouvez changer les paramètres de l'exercice (nombre de questions et lignes utilisées).</li>
+        <li>The first option allows you to check the anwsers entered in the table. 
+        The score is then calculated as follows: 1 point for each correct cell, 
+        out of the total number of expected answers.</li>
+        <li>The second option allows you to recreate a new exercise from the same file (shortcut: <code>Ctrl+R</code>).
+        When you reload an exercise, you can change the exercise's settings (questions number and used rows).</li>
     </ul>
 </p>
-<p>Lors de la vérification, l'application compare les réponses avec une tolérance à la casse et aux espaces 
-    par défaut (cette option peut être modifiée dans les paramètres, voir section suivante). Les bonnes réponses sont surlignées en vert, les mauvaises en rouge. 
-    Un GIF peut apparaître en fonction du score obtenu (cette option est également optionnelle).</p>
+<p>During the check, the app compares the answers using the default case-insensitive and space-tolerant settings 
+    (this option can be changed in the settings; see the next section). Correct answers are highlighted in green, and incorrect ones in red. 
+    A GIF may appear depending on the score obtained (this option is also optional).</p>
 
-<h4 id="Parametres">2.5 Paramétrer l'application</h4>
+<h4 id="Parametres">2.5 Configure the application</h4>
 
-<p>Pour pouvoir changer les paramètres de l'application, 
-    allez dans le menu <code>Paramètres</code> et sélectionnez l'option <code>Paramètres...</code> (raccourci <code>Ctrl+,</code>).
-    Cela ouvrira une fenêtre permettant de changer les paramètres. Les paramètres modifiables sont les suivants :
+<p>To change the application settings,
+    go to the <code>Settings</code> menu and select the <code>Settings...</code> option (shortcut <code>Ctrl+,</code>).
+    This will open a window where you can change the settings. The following settings can be modified:
     <ul>
-        <li>La langue de l'application</li>
-        <li>Le style de l'application</li>
-        <li>Lors de la vérification des réponses : </li>
+        <li>Application language</li>
+        <li>Application style</li>
+        <li>When checking answers: </li>
             <ul>
-                <li>La tolérance à la casse</li>
-                <li>La tolérance aux espaces</li>
+                <li>Case sensitivity</li>
+                <li>Space tolerance</li>
             </ul>
-        <li>L'apparition ou non d'un gif lors de l'affichage du score</li>
-        <li>La colonne montrée lors de l'exercice</li>
-        <li>Le séparateur utilisé lors de la lecture et de l'écriture des fichiers CSV</li>
+        <li>Whether or not to display a GIF when showing the score</li>
+        <li>The column displayed during the exercise</li>
+        <li>The separator used when reading and writing CSV files</li>
     </ul>
 </p>
-<p>Tous ces paramètres peuvent être réinitialisés avec l'option 
-    <code>Réinitialiser les paramètres</code>, du menu <code>Paramètres</code>.</p>
-<p>Tous les paramètres sont enregistrés dans le fichier <code>config.toml</code>, dans le dossier <code>.revitab</code>.</p>
+<p>All of these settings can be reset using the 
+    <code>Reset Settings</code> option in the <code>Settings</code> menu.</p>
+<p>All settings are saved in the <code>config.toml</code> file, located in the <code>.revitab</code> folder.</p>
 
-<h4 id="Licences-et-user-guide">2.6 Licences et Guide utilisateur</h4>
+<h4 id="Licences-et-user-guide">2.6 Licenses et User guide</h4>
 
-<p>Pour pouvoir accéder aux licences de l'application et des icones utilisés, allez dans le menu <code>Aide</code>, <code>A propos</code>.
-   Pour ouvrir le fichier README, sélectionnez, dans le même menu, <code>Guide Utilisateur</code> (raccourci <code>F1</code>). 
-   Les informations sont donc intégrées directement dans l'application.</p>
+<p>To view the licenses for the application and the icons used, go to the <code>Help</code> menu, then select <code>About</code>.
+   To open the README file, select <code>User Guide</code> from the same menu (shortcut <code>F1</code>). 
+   The documentation and information are therefore integrated directly into the application.</p>
 
-<h3 id="Liste-raccourci"> Annexe : Liste des raccourcis</h3>
+<h3 id="Liste-raccourcis">Appendix: List of Shortcuts</h3>
 
 <ul>
-    <li><code>Ctrl+O</code> : Ouvrir</li>
-    <li><code>Ctrl+N</code> : Nouveau</li>
-    <li><code>Ctrl+S</code> : Sauvegarder</li>
-    <li><code>Ctrl+T</code> : Créer un exercice</li>
-    <li><code>Ctrl+R</code> : Recharger l'exercice</li>
-    <li><code>Ctrl+Shift+S</code> : Insérer un ß</li>
-    <li><code>Alt+F4</code> : Quitter</li>
-    <li><code>Ctrl+,</code> : Paramètres</li>
-    <li><code>F1</code>     : Guide utilisateur</li>
+    <li><code>Ctrl+O</code> : Open</li>
+    <li><code>Ctrl+N</code> : New</li>
+    <li><code>Ctrl+S</code> : Save</li>
+    <li><code>Ctrl+T</code> : Create exercise</li>
+    <li><code>Ctrl+R</code> : Reload the exercise</li>
+    <li><code>Ctrl+Shift+S</code> : Insert an ß</li>
+    <li><code>Alt+F4</code> : Exit</li>
+    <li><code>Ctrl+,</code> : Settings</li>
+    <li><code>F1</code>     : User guide</li>
 </ul>
 
-<h3>Bonne utilisation ! </h3>
+<h3>Enjoy using it !</h3>
 </body>
 </html>
