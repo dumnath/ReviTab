@@ -28,7 +28,8 @@
 
 <h2 id="Introduction">Introduction</h2>
 
-<p>ReviTab is a Windows application, that allows you to create and edit CSV files, and practice with their content.</p>
+<p>ReviTab est une application possédant deux versions, une sur Linux et une autre sur Windows, permettant d'éditer des fichiers au 
+    format CSV et de s'entraîner dessus.</p>
 
 <h2 id="Guide-dutilisation">User guide</h2>
 
