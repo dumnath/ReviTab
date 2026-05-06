@@ -163,7 +163,7 @@ class MainWindow(QMainWindow) :
 
         #====================STATUSBAR====================
         self.status_bar = self.statusBar()
-        self.status_bar.showMessage("RéviTab v2.3", 5000)
+        self.status_bar.showMessage("RéviTab v2.4", 5000)
 
         #====================CENTRAL WIDGET====================
         self.tab = QTabWidget(movable=True, tabsClosable=True)
