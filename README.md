@@ -28,8 +28,7 @@
 
 <h2 id="Introduction">Introduction</h2>
 
-<p>ReviTab est une application possédant deux versions, une sur Linux et une autre sur Windows, permettant d'éditer des fichiers au 
-    format CSV et de s'entraîner dessus.</p>
+<p>ReviTab is a Windows application that lets you edit CSV files, practice with them, and export them as PDF tables.</p>
 
 <h2 id="Guide-dutilisation">User guide</h2>
 
@@ -66,6 +65,7 @@
 <p>To save the file, click the save icon in the toolbar or go to <code>File</code>, <code>Save</code> (shortcut <code>Ctrl+S</code>). 
     If this is a new file, a window will appear asking you to select a location for the CSV file. 
     If the file has been modified but not saved, you will be asked to confirm before closing the tab or the application.</p>
+<p>You can export the table to a PDF file, by selecting the <code>Export to PDF</code> option (shortcut <code>Ctr+P</code>). When exporting, you can choose the title displayed at the top of the document, and decide wether a evaluation-like header is shown. This feature can also be used with exercises.</p>
 <p>To insert an ß, use the shortcut <code>Ctrl+Shift+S</code>.</p>
 <p>You can also create exercises from open files (see next section)</p>
 
@@ -95,6 +95,8 @@
 <p>During the check, the app compares the answers using the default case-insensitive and space-tolerant settings 
     (this option can be changed in the settings; see the next section). Correct answers are highlighted in green, and incorrect ones in red. 
     A GIF may appear depending on the score obtained (this option is also optional).</p>
+
+<p>You can export exercises to PDF, cf <a href="#Edition-de-fichier-CSV">2.2 Editing CSV files</a></p>
 
 <h4 id="Parametres">2.5 Configure the application</h4>
 

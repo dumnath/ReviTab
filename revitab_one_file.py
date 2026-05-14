@@ -13,7 +13,10 @@ from PySide6.QtWidgets import (QApplication, QWidget, QGroupBox,
                                QDialog, QInputDialog, QLineEdit, QSpinBox)
 from PySide6.QtGui import QIcon, QAction, QPixmap, QFont, QColor, QMovie, QShortcut, QKeySequence
 from PySide6.QtCore import Qt
-
+from reportlab.lib.units import inch
+from reportlab.lib.pagesizes import A4
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Spacer, Paragraph
+from reportlab.lib.styles import getSampleStyleSheet
 
 dir_path = Path.home() / '.revitab'
 config_path =dir_path / 'config.toml'
@@ -84,6 +87,9 @@ class MainWindow(QMainWindow) :
         self.save_action = self.create_action('Icons/save.png', self.save_file, 'Ctrl+S')
         self.file_menu.addAction(self.save_action)
 
+        self.export_pdf_action = self.create_action('Icons/pdf.png', self.export_pdf, 'Ctrl+P')
+        self.file_menu.addAction(self.export_pdf_action)
+
         self.file_menu.addSeparator()
         
         self.exit_action = self.create_action('Icons/exit.png', self.on_close, 'Alt+F4')
@@ -149,6 +155,7 @@ class MainWindow(QMainWindow) :
         self.toolbar_edit.addSeparator()
 
         self.toolbar_edit.addAction(self.save_action)
+        self.toolbar_edit.addAction(self.export_pdf_action)
         self.exercise_action = self.create_action('Icons/practice.png', self.create_exercise, 'Ctrl+T')
         self.toolbar_edit.addAction(self.exercise_action)
 
@@ -161,9 +168,11 @@ class MainWindow(QMainWindow) :
         self.check_answers_action = self.create_action('Icons/check.png', self.check_answers)
         self.toolbar_practice.addAction(self.check_answers_action)
 
+        self.toolbar_practice.addAction(self.export_pdf_action)
+
         #====================STATUSBAR====================
         self.status_bar = self.statusBar()
-        self.status_bar.showMessage("RéviTab v2.4", 5000)
+        self.status_bar.showMessage("RéviTab v2.5", 5000)
 
         #====================CENTRAL WIDGET====================
         self.tab = QTabWidget(movable=True, tabsClosable=True)
@@ -233,7 +242,6 @@ class MainWindow(QMainWindow) :
             action.setShortcut(shortcut)
         action.triggered.connect(slot)
         return action
-
 
     def create_option_layout(self, icon_path) :
         layout = QHBoxLayout()
@@ -374,6 +382,66 @@ class MainWindow(QMainWindow) :
 
         if answer == QMessageBox.StandardButton.Yes :
             self.tab.removeTab(index)    
+
+    def export_pdf(self) :
+        if self.current_widget == None or self.tab_type[self.current_widget] == 'information' :
+            return
+        
+        self.header = False
+        self.pdf_title = "PDF Export"
+        export_settings = ExportPDFSettings(self)
+        result = export_settings.exec()
+        if result != QDialog.DialogCode.Accepted :
+            return
+        
+        filepath, _ = QFileDialog.getSaveFileName(self, self.texts['export_pdf'], filter = "PDF File (*.pdf)")
+        if not filepath :
+            return
+    
+        style = getSampleStyleSheet()['Title']
+        
+        boxdata = [[self.texts['surname'], self.texts['form']],
+           [self.texts['first_name'], self.texts['date']],
+           ["", ""],
+           [self.texts['mark'], ""]]
+        data = [[self.current_widget.item(row, col).text() if self.current_widget.item(row, col) else "" 
+                for col in range(self.current_widget.columnCount())] 
+                for row in range(self.current_widget.rowCount())]
+
+        story = []
+
+        page_width, page_height = A4
+        aW, aH = page_width - 1 * inch, page_height - 2.5 * inch
+        
+        story.append(Paragraph(self.pdf_title, style))
+        story.append(Spacer(1, 0.25 * inch))
+
+        if self.pdf_header :
+            col_width = aW / len(boxdata[0])
+            row_height = 15
+            aH -= row_height * len(boxdata)
+
+            boxstyle = TableStyle([('BOX', (0, 0), (-1, -1), 0.5, 'black'),
+                       ('FONTNAME', (0, 0), (-1, -1), 'Helvetica'),
+                       ('FONTSIZE', (0, 0), (-1, -1), 12)])
+            story.append(Table(boxdata, style=boxstyle, colWidths=col_width, rowHeights=row_height))
+
+            story.append(Spacer(1, 0.5 * inch))
+
+        col_width = aW / len(data[0])
+        row_height = aH / len(data)
+        if row_height < 18 :
+            row_height = 18
+
+        tblstyle = TableStyle([('GRID', (0, 0), (-1, -1), 0.5, 'black'),
+                       ('FONTNAME', (0, 0), (-1, -1), 'Helvetica'),
+                       ('FONTSIZE', (0, 0), (-1, -1), 12),
+                       ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+                       ('ALIGN', (0, 0), (-1, -1), 'CENTER')])
+        story.append(Table(data, style=tblstyle, colWidths=col_width, rowHeights=row_height))
+
+        doc = SimpleDocTemplate(filepath, pagesize=A4, topmargin=0, bottomMargin=0)
+        doc.build(story)
 
     def add_row(self) :    
         if not self.is_tab('edit') :
@@ -599,6 +667,9 @@ class MainWindow(QMainWindow) :
 
         self.save_action.setText(self.texts['save'])
         self.save_action.setStatusTip(self.texts['save_description'])
+        
+        self.export_pdf_action.setText(self.texts['export_pdf'])
+        self.export_pdf_action.setStatusTip(self.texts['export_pdf_description'])
 
         self.exit_action.setText(self.texts['exit'])
         self.exit_action.setStatusTip(self.texts['exit'])
@@ -906,6 +977,42 @@ class ExerciseCreationSettings(QDialog) :
         self.parent.nb_questions = self.nb_questions_sb.value()
         self.parent.elements_list = self.parent.elements_list[self.from_questions_sb.value()-1:self.to_sb.value()]
         self.accept()
+
+
+class ExportPDFSettings(QDialog) :
+    def __init__(self, parent) :
+        super().__init__(parent)
+        self.parent = parent
+        texts = self.parent.texts
+
+        self.setWindowTitle(texts['export_pdf'])
+        self.setWindowIcon(QIcon("Icons/pdf.png"))
+
+        layout = QFormLayout()
+        self.setLayout(layout)
+
+        self.pdf_title = QLineEdit()
+        self.pdf_title.setText("PDF Export")
+        layout.addRow(QLabel(texts['pdf_title']), self.pdf_title)
+
+        self.pdf_header_chb = QCheckBox()
+        layout.addRow(QLabel(texts['pdf_header']), self.pdf_header_chb)
+
+        layout_button = QHBoxLayout()
+        self.ok_button = QPushButton(texts['ok'])
+        self.ok_button.clicked.connect(self.ok)
+        layout_button.addWidget(self.ok_button)
+        self.cancel_button = QPushButton(texts['cancel'])
+        self.cancel_button.clicked.connect(self.close)
+        layout_button.addWidget(self.cancel_button)
+        layout.addRow(layout_button)
+
+    def ok(self) :
+        self.parent.pdf_title = self.pdf_title.text()
+        self.parent.pdf_header = self.pdf_header_chb.isChecked()
+        self.accept()
+
+
 
 if __name__ == '__main__' :
     check_config()

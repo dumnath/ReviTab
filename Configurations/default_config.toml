@@ -22,6 +22,13 @@ new_description = "Créer un nouveau fichier CSV"
 save = "Sauvegarder"
 save_description = "Sauvegarder le fichier actuel"
 
+export_pdf = "Exporter en PDF"
+export_pdf_description = "Exporte le tableau dans un fichier au format PDF"
+
+
+pdf_title = "Titre du PDF"
+pdf_header = "En-tête du PDF : "
+
 exit = "Quitter"
 
 undo = "Annuler"
@@ -112,6 +119,13 @@ nb_of_questions = "Nombre de questions : "
 from_line = "Questions de la ligne "
 to_line = "A la ligne "
 
+
+surname = "Nom : "
+first_name = "Prénom : "
+form = "Classe : "
+date = "Date : "
+mark = "Note : "
+
 [langue.english]
 
 file = "File"
@@ -127,6 +141,12 @@ new_description = "Create a new CSV file"
 
 save = "Save"
 save_description = "Save the current file"
+
+export_pdf = "Export to PDF"
+export_pdf_description = "Export the table into a PDF file"
+
+pdf_title = "PDF Title"
+pdf_header = "PDF Header : "
 
 exit = "Exit"
 
@@ -217,6 +237,12 @@ file_not_found = "File not found"
 nb_of_questions = "Number of questions : "
 from_line = "Questions from line "
 to_line = "To line "
+
+surname = "Surname : "
+first_name = "First Name : "
+form = "Form : "
+date = "Date : "
+mark = "Mark : "
 
 [fichiers]
 
