@@ -28,6 +28,7 @@ export_pdf_description = "Exporte le tableau dans un fichier au format PDF"
 
 pdf_title = "Titre du PDF"
 pdf_header = "En-tête du PDF : "
+pdf_column_header = "En-têtes des colonnes : "
 
 exit = "Quitter"
 
@@ -108,6 +109,9 @@ column_shown = "Colonne remplie : "
 csv_file_settings = "Paramètres des fichiers CSV"
 separator = "Separateur : "
 
+tables_settings = "Paramètres des tableaux"
+alternating_row_colors = "Alterner les couleurs des lignes :" 
+
 ok = "OK"
 apply = "Appliquer"
 cancel = "Annuler"
@@ -147,6 +151,7 @@ export_pdf_description = "Export the table into a PDF file"
 
 pdf_title = "PDF Title"
 pdf_header = "PDF Header : "
+pdf_column_header = "Column headers : "
 
 exit = "Exit"
 
@@ -227,6 +232,9 @@ column_shown = "Column shown : "
 csv_file_settings = "CSV File settings"
 separator = "Separator : "
 
+tables_settings = "Tables settings"
+alternating_row_colors = "Alternating row colors :" 
+
 ok = "OK"
 apply = "Apply"
 cancel = "Cancel"
@@ -246,6 +254,7 @@ mark = "Mark : "
 
 [fichiers]
 
+alternating_row_colors = true
 separateur = ";" # Séparateur utilisé par la liste au format CSV
 
 [exercice]

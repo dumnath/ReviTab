@@ -132,6 +132,7 @@
     <li><code>Ctrl+O</code> : Open</li>
     <li><code>Ctrl+N</code> : New</li>
     <li><code>Ctrl+S</code> : Save</li>
+    <li><code>Ctrl+P</code> : Export</li>
     <li><code>Ctrl+T</code> : Create exercise</li>
     <li><code>Ctrl+R</code> : Reload the exercise</li>
     <li><code>Ctrl+Shift+S</code> : Insert an ß</li>
