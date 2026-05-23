@@ -29,6 +29,7 @@ export_pdf_description = "Exporte le tableau dans un fichier au format PDF"
 pdf_title = "Titre du PDF"
 pdf_header = "En-tête du PDF : "
 pdf_column_header = "En-têtes des colonnes : "
+pdf_insert_image_after = "Espace pour une insertion d'image : "
 
 exit = "Quitter"
 
@@ -152,6 +153,7 @@ export_pdf_description = "Export the table into a PDF file"
 pdf_title = "PDF Title"
 pdf_header = "PDF Header : "
 pdf_column_header = "Column headers : "
+pdf_insert_image_after = "Space to insert a picture :"
 
 exit = "Exit"
 

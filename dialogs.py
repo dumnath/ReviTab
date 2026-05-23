@@ -302,6 +302,9 @@ class ExportPDFSettings(QDialog) :
         self.pdf_column_header_chb = QCheckBox()
         layout.addRow(QLabel(texts['pdf_column_header']), self.pdf_column_header_chb)
 
+        self.pdf_insert_image_after = QCheckBox()
+        layout.addRow(QLabel(texts['pdf_insert_image_after']), self.pdf_insert_image_after)
+
         layout_button = QHBoxLayout()
         self.ok_button = QPushButton(texts['ok'])
         self.ok_button.clicked.connect(self.ok)
@@ -315,4 +318,5 @@ class ExportPDFSettings(QDialog) :
         self.parent.pdf_title = self.pdf_title.text()
         self.parent.pdf_header = self.pdf_header_chb.isChecked()
         self.parent.pdf_column_header = self.pdf_column_header_chb.isChecked()
+        self.parent.pdf_insert_image_after = self.pdf_insert_image_after.isChecked()
         self.accept()

@@ -287,6 +287,7 @@ class MainWindow(QMainWindow) :
         self.pdf_header = False
         self.pdf_column_header = False
         self.pdf_title = "PDF Export"
+        self.pdf_insert_image_after = False
         export_settings = ExportPDFSettings(self)
         result = export_settings.exec()
         if result != QDialog.DialogCode.Accepted :
@@ -300,7 +301,9 @@ class MainWindow(QMainWindow) :
                 for col in range(self.current_widget.columnCount())] 
                 for row in range(self.current_widget.rowCount())]
         
-        generate_pdf(filepath, self.texts, data, self.pdf_title, self.pdf_header, self.pdf_column_header, self.current_widget.header_list)
+        generate_pdf(filepath, self.texts, data, self.pdf_title, self.pdf_header, 
+                     self.pdf_column_header, self.current_widget.header_list, 
+                     self.pdf_insert_image_after)
 
         
     def add_row(self) :    
