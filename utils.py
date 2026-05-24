@@ -11,11 +11,3 @@ def find_path(path) :
 def translate_action(action, text, description) :
     action.setText(text)
     action.setStatusTip(description)
-
-
-def normalize_text(self, text) :
-    if self.parent.case_tolerance == True :
-        text = text.lower()
-    if self.parent.space_tolerance == True :
-        text = text.strip()
-    return text

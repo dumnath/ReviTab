@@ -1,8 +1,9 @@
+from email.mime import text
+
 from PySide6.QtWidgets import QTableWidget, QTableWidgetItem, QLineEdit, QInputDialog, QMessageBox, QDialog
 from PySide6.QtGui import QFont, QColor
 from PySide6.QtCore import Qt
 from dialogs import ExerciseCreationSettings, ScoreWindow
-from utils import normalize_text
 import random as rd
 
 class BaseTable(QTableWidget) :
@@ -188,3 +189,11 @@ class PracticeTable(BaseTable) :
 
         score_window = ScoreWindow(self, score, self.max_score, self.parent.settings)
         score_window.show()
+
+
+    def normalize_text(self, text) :
+        if self.parent.case_tolerance == True :
+            text = text.lower()
+        if self.parent.space_tolerance == True :
+            text = text.strip()
+        return text
