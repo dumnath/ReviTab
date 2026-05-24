@@ -4,6 +4,12 @@ from PySide6.QtWidgets import QApplication
 from main_window import MainWindow
 
 if __name__ == '__main__' :
+    try :
+        import pyi_splash
+        pyi_splash.update_text('Loading...')
+        pyi_splash.close()
+    except ImportError :
+        pass
     check_config()
     app = QApplication(sys.argv)
     set_app_style(app)
